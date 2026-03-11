@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e37231",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211711",
+                        "success": "#10b981",
+                        "warning": "#f59e0b",
+                        "danger": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); }
+        .status-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white/50 dark:bg-background-dark/50 backdrop-blur-md px-6 py-4 lg:px-20">
+<div class="flex items-center gap-4">
+<div class="bg-primary p-2 rounded-lg text-white">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold leading-tight tracking-tight">System Status</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="System administrator avatar portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwpFuFKIg6js4_7CvlYCvC3PvjERGRpwRurwy9Z1__pxkCHaykIQx4z5I_hLR9h1gxF_EHKEt9-wPN_ILziL2hM01YZYR0XmUmdchjsJFzMXlNcRX0zsqxVzAea8O5CE_abaRlBVHdXaoU9QoaeL1_pJnoaQrn7TnLU7fLSUcrZ31TtRRllSGvQNun4CITFWgRao3Ga7DA60Omft1N7cBMZjs4RwTVsU63c2E7Itg05f_6Zp50OHors0R-xmdiPDlf-RXnZtS79eM')"></div>
+</div>
+</header>
+<main class="flex-1 px-6 py-8 lg:px-20 max-w-[1400px] mx-auto w-full">
+<!-- Hero Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-semibold text-sm">System Uptime</span>
+<span class="material-symbols-outlined text-primary">speed</span>
+</div>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">99.98%</p>
+<p class="text-success text-sm mt-2 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">arrow_upward</span> +0.02% from last week
+                        </p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-semibold text-sm">Active Nodes</span>
+<span class="material-symbols-outlined text-primary">dns</span>
+</div>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">42</p>
+<p class="text-slate-500 text-sm mt-2">Running in us-east-1</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-semibold text-sm">Error Rate</span>
+<span class="material-symbols-outlined text-primary">warning</span>
+</div>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">0.04%</p>
+<p class="text-success text-sm mt-2 font-bold">Within normal threshold</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-primary/5 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 dark:text-slate-400 font-semibold text-sm">Throughput</span>
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<p class="text-3xl font-black text-slate-900 dark:text-slate-100">1.2k <span class="text-sm font-normal text-slate-500">req/s</span></p>
+<p class="text-warning text-sm mt-2 font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span> High traffic detected
+                        </p>
+</div>
+</div>
+<!-- Microservices Grid -->
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-2xl font-black text-slate-900 dark:text-slate-100">Core Architecture</h3>
+<div class="flex items-center gap-2 text-sm">
+<span class="h-3 w-3 rounded-full bg-success"></span>
+<span class="text-slate-500 mr-4">Healthy</span>
+<span class="h-3 w-3 rounded-full bg-warning"></span>
+<span class="text-slate-500 mr-4">Degraded</span>
+<span class="h-3 w-3 rounded-full bg-danger"></span>
+<span class="text-slate-500">Outage</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Service 1: API Gateway -->
+<div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">router</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">API Gateway</h4>
+<p class="text-xs text-slate-500">v2.4.1 • Global Edge</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-success status-pulse"></span>
+                                    Operational
+                                </div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Latency</span>
+<span class="text-slate-900 dark:text-slate-100 font-bold">24ms</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-success rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<div class="flex justify-between items-end gap-1">
+<div class="h-8 w-full bg-success/20 rounded-sm"></div>
+<div class="h-10 w-full bg-success/20 rounded-sm"></div>
+<div class="h-6 w-full bg-success/20 rounded-sm"></div>
+<div class="h-12 w-full bg-success/20 rounded-sm"></div>
+<div class="h-9 w-full bg-success/20 rounded-sm"></div>
+<div class="h-11 w-full bg-success/20 rounded-sm"></div>
+<div class="h-7 w-full bg-success/20 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 2: Auth Service -->
+<div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Auth Service</h4>
+<p class="text-xs text-slate-500">OAuth 2.1 • Multi-region</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-success"></span>
+                                    Operational
+                                </div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Auth Rate</span>
+<span class="text-slate-900 dark:text-slate-100 font-bold">98.2% Success</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="flex justify-between items-end gap-1">
+<div class="h-6 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-4 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-10 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-12 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-7 w-full bg-primary/20 rounded-sm"></div>
+<div class="h-9 w-full bg-primary/20 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 3: Event Service -->
+<div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Event Service</h4>
+<p class="text-xs text-slate-500">PostgreSQL Cluster</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-warning/10 text-warning text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-warning status-pulse"></span>
+                                    Degraded
+                                </div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Queue Depth</span>
+<span class="text-warning font-bold">High</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-warning rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="flex justify-between items-end gap-1">
+<div class="h-4 w-full bg-slate-200 rounded-sm"></div>
+<div class="h-6 w-full bg-slate-200 rounded-sm"></div>
+<div class="h-12 w-full bg-warning/40 rounded-sm"></div>
+<div class="h-14 w-full bg-warning/40 rounded-sm"></div>
+<div class="h-10 w-full bg-warning/40 rounded-sm"></div>
+<div class="h-8 w-full bg-slate-200 rounded-sm"></div>
+<div class="h-5 w-full bg-slate-200 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 4: User Service -->
+<div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">User Service</h4>
+<p class="text-xs text-slate-500">Redis Cache Active</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-success"></span>
+                                    Operational
+                                </div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Active Sessions</span>
+<span class="text-slate-900 dark:text-slate-100 font-bold">4.8k</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="flex justify-between items-end gap-1">
+<div class="h-7 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-9 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-11 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-8 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-6 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-10 w-full bg-primary/10 rounded-sm"></div>
+<div class="h-7 w-full bg-primary/10 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 5: Inscription Service -->
+<div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/50 transition-all group">
+<div class="p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-slate-100">Inscription Service</h4>
+<p class="text-xs text-slate-500">v1.2.0 • Ledger Sync</p>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-success/10 text-success text-xs font-bold">
+<span class="h-2 w-2 rounded-full bg-success"></span>
+                                    Operational
+                                </div>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-slate-500">Sync Delay</span>
+<span class="text-slate-900 dark:text-slate-100 font-bold">140ms</span>
+</div>
+<div class="h-1.5 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-success rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="flex justify-between items-end gap-1">
+<div class="h-10 w-full bg-success/10 rounded-sm"></div>
+<div class="h-7 w-full bg-success/10 rounded-sm"></div>
+<div class="h-8 w-full bg-success/10 rounded-sm"></div>
+<div class="h-12 w-full bg-success/10 rounded-sm"></div>
+<div class="h-9 w-full bg-success/10 rounded-sm"></div>
+<div class="h-6 w-full bg-success/10 rounded-sm"></div>
+<div class="h-11 w-full bg-success/10 rounded-sm"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Service 6: Placeholder/Add New -->
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col items-center justify-center p-6 bg-slate-50/50 dark:bg-slate-900/20 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-slate-400 text-4xl mb-2">add_circle</span>
+<p class="text-slate-400 font-bold">Add Service</p>
+</div>
+</div>
+<!-- Incident Log Section -->
+<div class="mt-12 bg-white dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<h3 class="font-bold text-lg">System Logs &amp; Incidents</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:underline">
+                            View Archive <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-6 flex items-start gap-4">
+<div class="h-10 w-10 flex-shrink-0 bg-warning/10 text-warning rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">history_toggle_off</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold">Event Service Degradation</span>
+<span class="px-2 py-0.5 rounded bg-warning/20 text-warning text-[10px] font-black uppercase tracking-wider">Investigating</span>
+</div>
+<p class="text-sm text-slate-500 mb-2">Primary database node for Event Service is showing increased I/O wait times. Failover protocol initiated.</p>
+<p class="text-xs text-slate-400">Today at 14:32 UTC</p>
+</div>
+</div>
+<div class="p-6 flex items-start gap-4">
+<div class="h-10 w-10 flex-shrink-0 bg-success/10 text-success rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-bold">Auth Service Patch Deployment</span>
+<span class="px-2 py-0.5 rounded bg-success/20 text-success text-[10px] font-black uppercase tracking-wider">Resolved</span>
+</div>
+<p class="text-sm text-slate-500 mb-2">Scheduled maintenance for Auth Service completed successfully. All nodes updated to v2.1.4.</p>
+<p class="text-xs text-slate-400">Yesterday at 22:10 UTC</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Network Topology Visualizer Placeholder -->
+<div class="mt-12 mb-12 relative rounded-2xl overflow-hidden h-[400px] bg-slate-900">
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_50%_50%,#e37231_0%,transparent_50%)]"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
+<span class="material-symbols-outlined text-6xl text-primary mb-4">hub</span>
+<h3 class="text-2xl font-black text-white mb-2">Live Topology View</h3>
+<p class="text-slate-400 max-w-md mx-auto">Visualizing traffic flows and service dependencies across 14 clusters in real-time.</p>
+<div class="mt-8 flex gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-primary/20">Launch Interactive Map</button>
+<button class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-bold backdrop-blur-md transition-all">Download Snapshot</button>
+</div>
+</div>
+<!-- Abstract Background Elements -->
+<div class="absolute top-10 left-10 h-32 w-32 border border-primary/20 rounded-full animate-ping"></div>
+<div class="absolute bottom-10 right-10 h-20 w-20 border border-primary/30 rounded-full"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="px-6 py-8 lg:px-20 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cloud_done</span>
+<span class="text-slate-500 font-medium">All systems monitored from 4 global locations</span>
+</div>
+<div class="flex gap-8 text-sm font-bold text-slate-400">
+<a class="hover:text-primary" href="#">Docs</a>
+<a class="hover:text-primary" href="#">API</a>
+<a class="hover:text-primary" href="#">Support</a>
+<a class="hover:text-primary" href="#">System Health v4.2</a>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

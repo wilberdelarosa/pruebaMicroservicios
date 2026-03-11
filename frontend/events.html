@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>IsleEvents | Caribbean Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e37231",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211711",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .hover-zoom:hover img {
+            transform: scale(1.1);
+        }
+        .event-card-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(227, 114, 49, 0.1), 0 10px 10px -5px rgba(227, 114, 49, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-12">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-4xl font-bold">sailing</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-extrabold tracking-tight">IsleEvents</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Discover</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Festivals</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Private</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Venues</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="hidden md:flex flex-col min-w-40 h-10 max-w-64 relative">
+<div class="flex w-full flex-1 items-center rounded-full bg-slate-100 dark:bg-slate-800 px-4">
+<span class="material-symbols-outlined text-slate-500 text-xl">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-500" placeholder="Search island vibes..."/>
+</div>
+</label>
+<button class="bg-primary text-white p-2 rounded-full flex items-center justify-center hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-primary/20 rounded-full p-0.5 border-2 border-primary">
+<div class="size-9 rounded-full bg-cover bg-center" data-alt="User profile picture of a smiling traveler" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdgmpy63ZYZ79PfSmT6ni3J02gBoRO55RYpdAG0CVv5GHBCNTFS6eJVa31WGj65SpnkqD1n42cB2Mb6hx-oQPAuiz9pvU_YZEFk34wfzpxBhH6DEojegsMFXieCkk2F7xPw8iPHNJtnSvkedFFGfatD5gIF8_v5RPWIujXSFFqi9_jHnty3tStmVAjlryGwYQFWNj1D4RDgMqJUpCT5y52zCBRHDkkGpaPhz0bvfWreF5HCsMUSFuF6kqQ_ouZzD2Zsead-xKMEMc");'></div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 md:px-10 py-8">
+<!-- Hero High Impact Section -->
+<div class="@container mb-10">
+<div class="relative overflow-hidden rounded-xl h-[340px] group">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Vibrant outdoor Caribbean music festival at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAeuHUggIUiTbDhNcSLXAWz7fquX9ZOssYwsGjOjg7eJ8QZmJOf6jahuNp4lyOo_Z3nRGtR3sg9qRNx7uDxSF5vhJDUL_NQa0DTXx2W9APxXThCpAJg0hcHA_-FJ9_5LO16y4LlB-8QbcXX7imbUVLkbn3vurQogDsZ_qOgMiIKPwho2uZSazov_o573pEb3-60ICJoUGZieryhJBI75H7AxpFjKVaNa9GasFA7rcAVawlxwaq6T7j09r7D2K-9RBkIwfPS7-9Vuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+<span class="bg-primary text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-4">Featured Event</span>
+<h1 class="text-white text-4xl md:text-5xl font-extrabold leading-tight mb-4 max-w-2xl">Discover Authentic <br/><span class="text-primary">Caribbean Vibes</span></h1>
+<p class="text-slate-200 max-w-lg text-lg mb-6">Experience the rhythm of the islands from Trinidad Carnival to Reggae Sumfest.</p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold hover:translate-y-[-2px] transition-transform">Explore Now</button>
+<button class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-xl font-bold hover:bg-white/20 transition-all">View Schedule</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modern Filter Chips -->
+<div class="flex flex-wrap items-center gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide">
+<button class="flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-2.5 font-semibold text-sm shadow-lg shadow-primary/20 transition-all">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+                    All Events
+                </button>
+<button class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-lg">music_note</span>
+                    Reggae Night
+                </button>
+<button class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-lg">beach_access</span>
+                    Beach Party
+                </button>
+<button class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-lg">sailing</span>
+                    Sailing
+                </button>
+<button class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-primary transition-all">
+<span class="material-symbols-outlined text-lg">restaurant</span>
+                    Food Fest
+                </button>
+<button class="flex items-center gap-2 rounded-xl bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-5 py-2.5 font-semibold text-sm border border-slate-200 dark:border-slate-700 hover:border-primary transition-all ml-auto">
+<span class="material-symbols-outlined text-lg">tune</span>
+                    More Filters
+                </button>
+</div>
+<!-- Enhanced Grid -->
+<section>
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-extrabold tracking-tight flex items-center gap-2">
+<span class="w-8 h-1 bg-primary rounded-full"></span>
+                        Trending Now
+                    </h2>
+</div>
+<div id="eventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- Dynamic Cards will be rendered here -->
+</div>
+</section>
+<!-- Map Selection Visual -->
+<section class="mt-16 bg-white dark:bg-slate-800 rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex flex-col md:flex-row gap-10 items-center">
+<div class="flex-1">
+<h2 class="text-3xl font-extrabold mb-4">Explore by Island</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">Don't know where to go? Select an island on the map to find exclusive local events and secret beach parties.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/10 p-4 rounded-xl border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer group">
+<h4 class="font-bold text-lg mb-1">Bahamas</h4>
+<span class="text-xs font-semibold group-hover:text-white/80">12 Active Events</span>
+</div>
+<div class="bg-primary/10 p-4 rounded-xl border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer group">
+<h4 class="font-bold text-lg mb-1">Antigua</h4>
+<span class="text-xs font-semibold group-hover:text-white/80">8 Active Events</span>
+</div>
+<div class="bg-primary/10 p-4 rounded-xl border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer group">
+<h4 class="font-bold text-lg mb-1">Curaçao</h4>
+<span class="text-xs font-semibold group-hover:text-white/80">15 Active Events</span>
+</div>
+<div class="bg-primary/10 p-4 rounded-xl border border-primary/20 hover:bg-primary hover:text-white transition-all cursor-pointer group">
+<h4 class="font-bold text-lg mb-1">St. Kitts</h4>
+<span class="text-xs font-semibold group-hover:text-white/80">5 Active Events</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700 relative group">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Stylized map of the Caribbean islands" data-location="Caribbean Islands" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZq2iMGzVR1cg-Z_IEXlJlnx05A7cVJ58Xo3PbUOEcMgN9x0VnkeYW-UZdGT5ez7iCtOOJPENwvdB2Pi9XA4zWv6QUTpoHqgA_XmYx54Fg99bczgOlAi71_4Wvvgs6nVQIkUUsan0V5utlX-5b1wHilUSv0c1aRSnyHNukKbItBAFWQYHr0uFKOKBceBVPmtmc_5WeZsL4o7E75HF3mSfDLvVaKessx7wTIMCVdeHTmDkEmfGzC8CPTvK5nvPovO9trdzACxxVohM"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md px-6 py-3 rounded-full shadow-2xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-bold">Interactive Map Coming Soon</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Minimal Footer -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-100 dark:border-slate-800 px-6 md:px-20 py-12">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">sailing</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-extrabold tracking-tight">IsleEvents</h2>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Terms</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Safety</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex gap-4">
+<button class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="size-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</div>
+<p class="text-center text-slate-400 text-xs mt-12">© 2024 IsleEvents. Bringing the rhythm of the Caribbean to you.</p>
+</footer>
+</div>
+</div>
+</body>
+<script src="js/api.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Redirection if not logged in
+        if (!apiService.isAuthenticated()) {
+            window.location.href = 'auth.html';
+            return;
+        }
+
+        const eventsGrid = document.getElementById('eventsGrid');
+        
+        try {
+            const events = await apiService.getEvents();
+            
+            if (!events || events.length === 0) {
+                eventsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <span class="material-symbols-outlined text-4xl text-slate-400 mb-2">event_busy</span>
+                        <h3 class="text-xl font-bold text-slate-700 dark:text-slate-200">No events found</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mt-2">Check back later for new experiences.</p>
+                    </div>`;
+                return;
+            }
+
+            eventsGrid.innerHTML = events.map(event => `
+                <div class="group relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden event-card-shadow transition-all duration-300 hover:translate-y-[-8px]">
+                    <div class="aspect-[4/5] overflow-hidden relative">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="${event.imageUrl || 'https://via.placeholder.com/400x500'}" alt="${event.name}">
+                        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <span class="text-xs font-bold text-primary-200 uppercase tracking-widest text-primary">${event.category || 'Event'}</span>
+                            <h3 class="text-white text-xl font-bold mt-1 truncate">${event.name}</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 flex flex-col justify-between" style="min-height: 140px;">
+                        <div>
+                            <div class="flex items-center justify-between mb-2 text-sm text-slate-500 dark:text-slate-400">
+                                <span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg">calendar_month</span> ${new Date(event.eventDate).toLocaleDateString()}</span>
+                                <span class="flex items-center gap-1 text-primary font-bold"><span class="material-symbols-outlined text-lg">payments</span> $${event.price || 0}</span>
+                            </div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400 mb-3 truncate">
+                                <span class="material-symbols-outlined text-sm align-middle">location_on</span> ${event.location}
+                            </div>
+                        </div>
+                        <button onclick="window.location.href='event-detail.html?id=${event.id}'" class="w-full bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white text-slate-900 dark:text-slate-100 font-bold py-2.5 rounded-lg transition-colors">
+                            Book Tickets
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+        } catch (error) {
+             console.error("Failed to load events:", error);
+             eventsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <span class="material-symbols-outlined text-4xl text-red-400 mb-2">error</span>
+                        <h3 class="text-xl font-bold text-slate-700 dark:text-slate-200">Error loading events</h3>
+                        <p class="text-slate-500 dark:text-slate-400 mt-2">Could not connect to the Backend server. Check if API Gateway is running.</p>
+                    </div>`;
+        }
+    });
+
+    // Logout handler attachment (if applicable globally, best placed in shared nav script)
+</script>
+</html>

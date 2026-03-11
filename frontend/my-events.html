@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Event Passport</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e37231",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211711",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ticket-cutout-l {
+            clip-path: circle(12px at 0% 50%);
+        }
+        .ticket-cutout-r {
+            clip-path: circle(12px at 100% 50%);
+        }
+        .passport-texture {
+            background-image: radial-gradient(circle at 2px 2px, rgba(227, 114, 49, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden passport-texture">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-primary/10 bg-white/80 backdrop-blur-md px-6 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3 text-primary">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">confirmation_number</span>
+</div>
+<h2 class="text-slate-900 font-extrabold text-xl leading-tight tracking-tight">Passport</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/10 text-primary transition-colors hover:bg-primary/20">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary text-white shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<main class="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
+<!-- User Profile Passport Header -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-6 mb-8 border border-primary/10 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16"></div>
+<div class="flex flex-col md:flex-row items-center gap-6 relative z-10">
+<div class="relative">
+<div class="bg-primary/20 p-1 rounded-full border-2 border-primary/30">
+<img alt="Profile portrait of Alex smiling" class="size-24 rounded-full object-cover border-4 border-white" data-alt="Alex's friendly profile portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv8qUYdxZ8W4Mh2AHlCeRbHej8EnXAQBpZk8EdiHxV5aIanAjLX1EQq_6fr_koC_ENJoJas15ZGR4oPNImX5MuSWb8dsurUN7aA4gKQdyl78DfxPdn6iqJWlUN2k_FFQ6zlgCbNhu9P8wEBFthxPa6J-JTb7-4-uFwQh99fq3STwYmsdbT_9cFI60Rg6RsSTmyfJZxiKpB7cqvboNmoan90udGBdp7u6MT3zi_wW_hb5iFMPZrJqZJtTMDPWWcUYqBrGyspPyq8wQ"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full border-2 border-white uppercase tracking-wider">Elite</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<p class="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-1">Authenticated Holder</p>
+<h1 class="text-3xl font-extrabold text-slate-900 mb-2">Alex's Journey</h1>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="flex items-center gap-2 bg-background-light px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">event_available</span>
+<span class="text-sm font-semibold text-slate-600">12 Attended</span>
+</div>
+<div class="flex items-center gap-2 bg-background-light px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm">upcoming</span>
+<span class="text-sm font-semibold text-slate-600">5 Upcoming</span>
+</div>
+</div>
+</div>
+<div class="hidden lg:block bg-background-light p-4 rounded-lg border-2 border-dashed border-primary/20">
+<div class="text-center">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mb-1">Digital Stamp</p>
+<span class="material-symbols-outlined text-5xl text-primary/30">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="mb-6">
+<div class="flex gap-2 p-1.5 bg-white rounded-xl border border-primary/5 shadow-sm">
+<button class="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-white font-bold text-sm transition-all shadow-md">
+<span class="material-symbols-outlined text-lg">local_activity</span>
+                        Boarding Passes
+                    </button>
+<button class="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg text-slate-500 font-bold text-sm hover:bg-background-light transition-all">
+<span class="material-symbols-outlined text-lg">history_edu</span>
+                        Travel Logs
+                    </button>
+</div>
+</div>
+<!-- Featured Ticket Card -->
+<div class="mb-10 group cursor-pointer">
+<div class="relative overflow-hidden rounded-xl bg-slate-900 shadow-2xl transition-transform duration-300 hover:scale-[1.01]">
+<div class="aspect-[21/9] md:aspect-[3/1] bg-cover bg-center opacity-70 group-hover:opacity-60 transition-opacity" data-alt="Modern tech stage with vibrant blue and orange lighting" data-location="San Francisco" style='background-image: linear-gradient(90deg, #211711 0%, rgba(33, 23, 17, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBabyShTlPXGOs8yEcZ9zbJFMFZVnz2KIiy13JLT8UyS66IUcDn12ekB0U6HrspChbjfL6CjKLxFTAh4nzbHItyIN_M7JcLhVLW87OM5Eg4pzEOp7sSj6toJK3Q7EZuBbnRRp40BAwJo1zpGxmGw9gBwC7KUVdvvxE7dT5j7ShikWagVSJO7aMNZrxozm-NDfvbLsJeE-pxFslF88luvlJoiQFLkxilqILbdEDOvEEOpcFu8pTJ00LfEgAVdEL6M7yFRWgOpOcccyg");'>
+</div>
+<!-- Ticket Aesthetics -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-12 bg-background-light rounded-r-full"></div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-12 bg-background-light rounded-l-full"></div>
+<div class="absolute left-1/4 top-0 bottom-0 border-l border-dashed border-white/20 hidden md:block"></div>
+<div class="absolute inset-0 p-6 flex flex-col justify-between md:flex-row md:items-center">
+<div class="md:max-w-md">
+<div class="inline-flex items-center gap-2 bg-primary px-2 py-1 rounded text-[10px] font-bold text-white uppercase tracking-widest mb-3">
+<span class="material-symbols-outlined text-xs">flight_takeoff</span>
+                                Boarding Gate A1
+                            </div>
+<h3 class="text-white text-2xl md:text-3xl font-extrabold leading-tight mb-1">Global Tech Summit 2024</h3>
+<p class="text-white/80 font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                San Francisco, CA • Nov 14-16
+                            </p>
+</div>
+<div class="mt-4 md:mt-0 flex flex-col items-end gap-3">
+<div class="hidden md:block bg-white p-2 rounded-lg">
+<span class="material-symbols-outlined text-4xl text-slate-900">qr_code_2</span>
+</div>
+<button class="w-full md:w-auto px-8 py-3 bg-white text-slate-900 font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                View Passport
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State / Suggestion -->
+<div class="border-2 border-dashed border-primary/20 rounded-xl p-12 flex flex-col items-center text-center bg-white/40">
+<div class="size-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined text-4xl">map</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-2">Ready for your next destination?</h3>
+<p class="text-slate-500 max-w-xs mb-8">Your passport has plenty of space for new stamps. Discover events near you.</p>
+<div class="flex gap-4">
+<button class="px-6 py-2.5 bg-primary text-white font-bold rounded-lg shadow-lg shadow-primary/20 transition-transform active:scale-95">
+                        Explore Events
+                    </button>
+<button class="px-6 py-2.5 bg-white border border-primary/20 text-slate-700 font-bold rounded-lg hover:bg-primary/5 transition-colors">
+                        Add Ticket
+                    </button>
+</div>
+</div>
+<!-- Secondary Navigation / Explore -->
+<div class="mt-12">
+<h4 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+                    Tailored for your Journey
+                </h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-4 rounded-xl border border-primary/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="size-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Outdoor music festival crowd" class="size-full object-cover" data-alt="Vibrant outdoor music festival at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZVNz3nkltQfONEgZkDUfax12dkXxzZ3B7Wka4QbAbWhq5s1cfwONna-AUuaDtcfKdTYs5TxfxiT5Z3oRGgUom0odUgX_znyacM6smkTLA6c2YqR433I8sE7Dsg8cok1SPTTtDAuVSDmoKgXLRPkqg6tFwktDBWAxxAYW-gFtrYgC4FKQtdPny_VD3FP1h41QUxXILTQ7_q6xzJA3kYIXfgslTChBdED4gK2PLJlQj4b4MIm5UJVODSg90FMwlfMYKxtTtmj6UI4U"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold text-slate-900 text-sm">Sunsets &amp; Soundwaves</h5>
+<p class="text-xs text-slate-500">Music • Tomorrow • 5km away</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="bg-white p-4 rounded-xl border border-primary/10 flex items-center gap-4 hover:shadow-md transition-shadow">
+<div class="size-16 rounded-lg overflow-hidden shrink-0">
+<img alt="Educational conference or workshop" class="size-full object-cover" data-alt="Speaker presenting at a tech conference" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfTDYUjiCxnNUVMJcTmMj9D_rfYh_L7-hC6wr2ZqX407apeKiuv94uVHTzRK_GLuwd-8kjTjZUS0PkOKMlWXySkVa_RDGvDEyeMBE5frCCPKaIAj9Xy_lauuHaMIRrR6V2v0zUy0mGMHfQZ965VAxiZiJZjUrvPKi4is2JrFlgNgSysFZOnU4jBdUOzIqiAmxNN-h4bMpOA-1yexour2s3KqXlJfUnGDY6aUH36hTxucHllnqB80Dk-F7maEXyJI33u5IihAhPxZA"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold text-slate-900 text-sm">Creative Design Meet</h5>
+<p class="text-xs text-slate-500">Workshop • Saturday • Online</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar -->
+<nav class="bg-white/95 backdrop-blur-sm border-t border-primary/5 px-6 py-3 pb-8 md:pb-4 fixed bottom-0 left-0 w-full z-50">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-[10px] font-bold">Passport</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-bold">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">face</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</nav>
+<div class="h-20"></div> <!-- Spacer for fixed nav -->
+</div>
+</div>
+</body></html>

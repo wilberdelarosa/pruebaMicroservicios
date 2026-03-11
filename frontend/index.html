@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e37231",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211711",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">star_rate</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Caribbean<span class="text-primary">Home</span></h1>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="events.html">Discover</a>
+<a class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-primary transition-colors flex items-center gap-1" href="perfil.html">
+                            My Profile
+</a>
+<a class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-primary transition-colors" href="#" onclick="apiService.logout()">Logout</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-slate-200/50 dark:bg-white/5 rounded-xl px-3 py-1.5 border border-transparent focus-within:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-slate-400" placeholder="Find your paradise..." type="text"/>
+</div>
+<button class="p-2 hover:bg-primary/10 rounded-xl transition-all">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">notifications</span>
+</button>
+<div class="h-10 w-10 rounded-full border-2 border-primary/20 p-0.5 overflow-hidden">
+<img class="h-full w-full object-cover rounded-full" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4p8Fgik1HtAdtjWU4s18QOXaa9b7sngNlKnhK38d8bRvTVAuU_Y41G7wlIDyNErNvn6A4bVOL3WUa2l0EnRyvXp7FXufU-y2BoNKWdf2oebZD5znAlXQjVacbKB7MmsSs5ETqUeK8dhz009XrH7NqXCPJfuBrIqCfyPRCIT7be7W7vlb2IaIek7KDhxF6ILLUh9FPRaw_5Zu0LgBJ565XnwmAqbhyTuOmcsfv7JOVr9GyJ8Rg5F5RfSvfvyb5IVj9XxXS2tnZ9fU"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-20 py-12">
+<div class="relative overflow-hidden rounded-[2rem] bg-slate-900 dark:bg-black min-h-[600px] flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-70" data-alt="Breathtaking crystal clear Caribbean ocean view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA53mSHFY77msFDfWihhuFvh_mFTFTxK5Lks6AvblDxsyBiwRNOaIG-53Y3LojCjbxyN8hpn4fwBGSad7aSnGA1oe2N_FyKOITmPYD3G-lWeQt5xl9ozRuDMnX-Efbum__hn62H69pCxPW4YrWPvrAu6NUXCse24OYQZM3DbwrD7GuTtZBZXyaW8TL3dwxKj7LAyVxFhGxeQ1UyUp2LyGSMto39lSrMfRbbYEBW21NK6PCvWmZXIExNDS9Qu3ycA8TwearQ528ZDFs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-8 md:px-16 max-w-2xl flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-primary/30 w-fit">
+<span class="material-symbols-outlined text-primary text-sm">sunny</span>
+<span class="text-primary text-xs font-bold uppercase tracking-widest">Island Life Awaits</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
+                            Modern <span class="text-primary">Caribbean</span> Living
+                        </h1>
+<p class="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-lg">
+                            Experience the vibrant soul of the islands with curated luxury stays and authentic local adventures.
+                        </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button onclick="window.location.href='events.html'" class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold transition-all transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 flex items-center gap-2">
+                                Explore Events Now
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button onclick="window.location.href='perfil.html'" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold transition-all border border-white/20">
+                                My Dashboard
+                            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Destinations Section -->
+<section class="max-w-[1440px] mx-auto px-6 md:px-20 py-12">
+<div class="flex items-end justify-between mb-10">
+<div>
+<h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Featured Destinations</h2>
+<div class="h-1 w-20 bg-primary mt-3 rounded-full"></div>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                        View All <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<div class="flex gap-8 overflow-x-auto pb-6 scrollbar-hide no-scrollbar">
+<!-- Island Circle 1 -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] group cursor-pointer">
+<div class="relative size-24 p-1 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all duration-500">
+<img class="h-full w-full object-cover rounded-full grayscale-[50%] group-hover:grayscale-0 transition-all" data-alt="St. Lucia pitons landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYlrVQxveQe1F0bijqK5oL1vbnQSHzgzV2u6SD3vQInYr9GSgU2TcAL08RYTlqCFzXUxiaTUxNfwPRSuqwwrV3AFA0xd9o4vhEdukFgowSXmly-5L0A3PdKJtCoQvYbJdhgDb25SNvOaFxd8ZFLbig62D5oPL6QfPkXuEiuAqO5E6wv5MfDRP2mBh0TWZ_hRINK5WcUQOMwXvx0rku3L87YOAIoxaBAOF9qua5wP_f6dBITH-5dV19FsTunP_nixJSQ4pIBo3ageM"/>
+</div>
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">St. Lucia</span>
+</div>
+<!-- Island Circle 2 -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] group cursor-pointer">
+<div class="relative size-24 p-1 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all duration-500">
+<img class="h-full w-full object-cover rounded-full grayscale-[50%] group-hover:grayscale-0 transition-all" data-alt="Antigua beach aerial" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCruPEQ2HyXC4leKyg7vK8uGD3CVWIarOWnju5A9c22ZEA95RIJmXv7AR0-cPSCqA74EMTh31JIEc2aCNKOgiUdbWs3EYCOSjxz-OMI1fsnx8GICQkPVxqxdL2he_iKGnT1fi8PHvGJ2clbSeVKFJSGPKWl9ln6XBWEsH123EWgAZhck7SnZUUOU_N-u0Pt1GQEYxZUDwjfb3Um-xupgOe9n8PsI0P_6270p4Ob3GGZFT6YbJH42Xp2rEfvY8cwhYeqh-SHdJmuBfM"/>
+</div>
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Antigua</span>
+</div>
+<!-- Island Circle 3 -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] group cursor-pointer">
+<div class="relative size-24 p-1 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all duration-500">
+<img class="h-full w-full object-cover rounded-full grayscale-[50%] group-hover:grayscale-0 transition-all" data-alt="Barbados tropical palm trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgGJCJY7mMP7LGn_Cy3PF18mKpWPXxp5EW6HFu3rN0pO0G5gFb2nLDYl5sQYg9IcEGfRWg3D1H2T-JJHUvG7UaQoH1qokqYTcotfXnfr1d4JE0J4CYXXKg0KHhppMcIJfrhywK9GwJKW2R9UHfCQgZQuo7clX3yifzAiO0EKP51WHeRYNmvbC41oF2UPux87v6PPUxd-8RrWbAHa2lR9nOfJxVCNgzyJ-XJtKIZHZRZ8vOQz2pb4jQ--nl_lqZnW-X-nYSoifdGE8"/>
+</div>
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Barbados</span>
+</div>
+<!-- Island Circle 4 -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] group cursor-pointer">
+<div class="relative size-24 p-1 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all duration-500">
+<img class="h-full w-full object-cover rounded-full grayscale-[50%] group-hover:grayscale-0 transition-all" data-alt="Jamaica lush blue mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOhHdfVYUgR6Y-P8Fon1vgud0MPpts4cfOH81gt84Oyl9T3WHSupAVC_m12SfGImbhrASGj67rQyAx4TGoPwY-KYaTzm2kX6ya3fYGiLCqaoVg-F56iYOT7W-3RXPpydEjljCqW8yoBJ4BgdKdfFh5tEYlZYxmlSGCD2vtpQZjqTD8HwMMM1WMGdAbIm0_Vba_uHuTJlBVYG-9GBrmeKqKw24vcxON7XlZrf5bLvK_SLuntRW_STGwb1Go99YbTPlCJahr6FQs4dE"/>
+</div>
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Jamaica</span>
+</div>
+<!-- Island Circle 5 -->
+<div class="flex flex-col items-center gap-3 min-w-[100px] group cursor-pointer">
+<div class="relative size-24 p-1 rounded-full border-2 border-primary/20 group-hover:border-primary transition-all duration-500">
+<img class="h-full w-full object-cover rounded-full grayscale-[50%] group-hover:grayscale-0 transition-all" data-alt="Bahamas turquoise ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCneMGN-bbabA6WFK_iJGF1nSVPvprJzNCuh0XuwdtsqBdVlUhbw813m9-mtyl52zG4SZ0WFNJzbyjGZP1Ry0-V2pmJ62zMfx--zr22TNontE2y6Z-52ub5YfNrO25kYWbN-36hznkRa-F1kihEGWFldj6LQr_8HjDlNF7rkzkNyEy0Ux59R39z8rhXtSZWfTMlYJ8CW4a-_hwK1lLWeJYZlzChW-4fY9M3ZZmcPWwG4IEoexYZz2LEoKSEnz4ax04esniXlMsghjA"/>
+</div>
+<span class="text-sm font-bold text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">Bahamas</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<!-- Card 1 -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Luxury oceanfront villa suite interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM4lxznoS8yN-qncr8W21tkD9XSDQXAaErHVGtN2J18pBGXSp9p6r1059Yc7-Hmm33p6XH1wLPuNQpKXanEt5mPTpINrnt4vuz5cOFssPNXP6K9b-2KY_FOuJKzoFaclWxUHB0r1psXufPc7Kh4wS29C1gcMLhxxnQ3mYH9PuWvkp_64SAsXVUSVFO52V03HwG5bKdLOGKpcxtdzjPb00h3uHuWDM395feGeMDPEezkG4Xgqdk0JDvRXci9ffwuLhfz03WNeJu6gA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="text-primary font-bold text-sm uppercase tracking-widest mb-2">Luxury</p>
+<h3 class="text-2xl font-bold text-white mb-2">Oceanfront Suites</h3>
+<p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Waking up to the sound of turquoise waves.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Hidden waterfall in lush rainforest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQ4UwK2w-2AJsBzAaE5V6G7oP1JHWpyTkAz_DpJ-gs-bTW5SPiyorcWVoY_Huh9-ZXVeln5lf-IjSfAg0NpQR1uhaiCN3IAixFAYJI3R8k7IxOzhpJ7fHigVflSouI__E_i1nTPdJcIH1BlMcWOsNMstMQCDUVTSanVNM6O2lbrVr3mbxQU302MJbiRhjITVGwij621xiFVrZzINkZOWvaydsZox3gzSu95Y7pIcriVz0l_0Yu6P0tCFqzFbP7OoSD9mw9IS-ecw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="text-primary font-bold text-sm uppercase tracking-widest mb-2">Peaceful</p>
+<h3 class="text-2xl font-bold text-white mb-2">Rainforest Retreats</h3>
+<p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Reconnect with nature in hidden green havens.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[4/5] overflow-hidden rounded-3xl cursor-pointer">
+<img class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Private beach cove with luxury boat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-5Ns4ns3kN3Y4RH-z4I1dZvK80_7YDhqatb4lMIjA7bFTs1isHU_k69i3Bjrit0-QnKsw66orfN8FcQpuCwyhnnMTEEbOMWVJ-T7wXit2alauvRufdp3Xs51Q0boU9X1FhMFfgkGsrgv0mi_8fCOFcR1ov1DBxDrpg6YCQxFY8Hyta7aCZtvnamQKXRtamLLFo2FDoX-PQbrX1lj4ASADfbaPu25eKf_8PO4vugG2ShKSazDFDFO2C3i2opDWlQjLhX6JLzphfy4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<p class="text-primary font-bold text-sm uppercase tracking-widest mb-2">Exclusive</p>
+<h3 class="text-2xl font-bold text-white mb-2">Private Coves</h3>
+<p class="text-slate-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Untouched beaches just for you and yours.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 py-16 px-6 md:px-20 mt-20 border-t border-primary/5">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-6">
+<div class="bg-primary p-1 rounded-lg text-white">
+<span class="material-symbols-outlined text-xl">star_rate</span>
+</div>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">CaribbeanHome</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-8">
+                        Redefining island luxury through curated experiences and high-end living in the heart of the Caribbean.
+                    </p>
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-xl">public</span>
+</div>
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-xl">camera</span>
+</div>
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-xl">share</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white mb-6">Navigation</h3>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Explore Destiantions</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Villas &amp; Suites</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Activities</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">About Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-slate-900 dark:text-white mb-6">Support</h3>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Help Center</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Terms &amp; Privacy</a></li>
+<li>
+<a class="flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">
+                                System Status
+                                <span class="size-1.5 bg-green-500 rounded-full"></span>
+</a>
+</li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-primary transition-colors text-sm" href="#">Contact Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+<p class="text-slate-400 text-xs">© 2024 CaribbeanHome Luxury Group. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</body>
+<script src="js/api.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!apiService.isAuthenticated()) {
+            window.location.href = 'auth.html';
+        }
+    });
+</script>
+</html>
