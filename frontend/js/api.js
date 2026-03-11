@@ -1,4 +1,4 @@
-const API_GATEWAY_URL = 'http://localhost:8080';
+const API_GATEWAY_URL = 'https://gateway-production-f43a.up.railway.app';
 
 // ============================================
 // API Service functions

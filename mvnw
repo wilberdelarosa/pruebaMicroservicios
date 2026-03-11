@@ -78,6 +78,19 @@ if [ -z "$JAVA_HOME" ]; then
   fi
 fi
 
+# Railway can export JAVA_HOME as the java executable path instead of the JDK home.
+# Normalize that value so the wrapper can resolve a runnable JVM.
+if [ -n "$JAVA_HOME" ] && [ -f "$JAVA_HOME" ]; then
+  javaHome=$(dirname "$JAVA_HOME")
+  JAVA_HOME=$(expr "$javaHome" : '\(.*\)/bin')
+  export JAVA_HOME
+fi
+
+if [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/java" ]; then
+  JAVA_HOME=$(dirname "$JAVA_HOME")
+  export JAVA_HOME
+fi
+
 # For Cygwin, ensure paths are in UNIX format before anything is touched
 if $cygwin; then
   [ -n "$JAVA_HOME" ] \
